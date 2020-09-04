@@ -14,3 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "HomeController@index");
+
+
+Route::group(['middleware' => ['guest']], function () {
+    // Authorisation routes
+    Route::get('register', "Auth\RegistrationController@show")->name('register');
+    Route::post('register', "Auth\RegistrationController@register");
+    Route::post('login', 'Auth\LoginController@authenticate');
+});
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+});
+

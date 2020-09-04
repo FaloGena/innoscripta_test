@@ -16,10 +16,12 @@ mix.disableNotifications();
 mix.scripts([
     'resources/js/app.js',
     'resources/js/main.js'
-], 'public/js/script.js').version();
+], 'public/js/script.js');
 
 mix.styles([
     'resources/css/main.css'
-], 'public/css/style.css').version();
+], 'public/css/style.css');
+
+mix.version();
 
 
