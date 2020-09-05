@@ -19,7 +19,9 @@ mix.scripts([
 ], 'public/js/script.js');
 
 mix.styles([
-    'resources/css/main.css'
+    'resources/css/main.css',
+    'resources/css/top-bar.css',
+    'resources/css/registration-page.css'
 ], 'public/css/style.css');
 
 mix.version();

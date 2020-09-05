@@ -1,34 +1,37 @@
 @extends('layouts.main')
 @section('content')
-            <form action="javascript:void(null);" method="POST" class="col-12 registration-form">
-                {{csrf_field()}}
-                <div class="row">
-            <div class="col-6 registration-form__name-input">
-                <label for="registration-form__name-input">Name</label>
-                <input type="text" name="name" id="registration-form__name-input">
-            </div>
-            <div class="col-6 registration-form__surname-input">
-                <label for="registration-form__surname-input">Surname</label>
-                <input type="text" name="surname" id="registration-form__surname-input">
-            </div>
-            <div class="col-6 registration-form__phone-input">
-                <label for="registration-form__phone-input">Phone</label>
-                <input type="tel" name="phone" id="registration-form__phone-input">
-            </div>
-            <div class="col-6 registration-form__email-input">
-                <label for="registration-form__email-input">Email</label>
-                <input type="email" name="email" id="registration-form__email-input">
-            </div>
-            <div class="col-6 registration-form__password-input">
-                <label for="registration-form__password-input">Password</label>
-                <input type="password" name="password" id="registration-form__password-input">
-            </div>
-            <div class="col-6 registration-form__password_confirmation-input">
-                <label for="registration-form__password_confirmation-input">Password confirmation</label>
-                <input type="password" name="password_confirmation" id="registration-form__password_confirmation-input">
-            </div>
-                <button type="submit">Submit</button>
+    <h3 class="register-heading">Registration form</h3>
+    <h5 class="register-descr">You can sign up to be able to see your order history.</h5>
+    <form action="javascript:void(null);" method="POST" class="col-12 registration-form">
+        {{csrf_field()}}
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="First Name *">
                 </div>
-            </form>
+                <div class="form-group">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number (digits only) *">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password *">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" name="surname" class="form-control" placeholder="Second Name *">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email *">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_confirmation" class="form-control"
+                           placeholder="Password Confirmation *">
+                </div>
+            </div>
+            <div class="col-12 registration-form__submit-button">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+        </div>
+    </form>
 
 @endsection

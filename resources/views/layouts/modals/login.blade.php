@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+                <h5 class="modal-title" id="loginModalLabel">Sign in</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,17 +12,14 @@
             <form action="javascript:void(null);" method="POST" class="login-form">
                 {{csrf_field()}}
                 <div class="modal-body">
-                    <div class="login-form__phone-input">
-                        <label for="login-form__phone-input">Phone</label>
-                        <input type="tel" name="phone" id="login-form__phone-input">
-                    </div>
-                    <div class="login-form__password-input">
-                        <label for="login-form__password-input">Password</label>
-                        <input type="password" name="password" id="login-form__password-input">
-                    </div>
+                    <label for="inputPhone" class="sr-only">Phone number</label>
+                    <input type="tel" name="phone" id="inputPhone" class="form-control" placeholder="Phone number" required autofocus>
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Log in</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                 </div>
             </form>
         </div>
