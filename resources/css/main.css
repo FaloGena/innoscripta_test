@@ -1,0 +1,44 @@
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-color: rgba(245, 235, 245, 0.33);
+}
+.page-container{
+    display: grid;
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+}
+.content-wrap{
+    height: 100%;
+    padding-bottom: 130px;
+}
+.main-container{
+    background-color: bisque;
+    overflow:auto;
+    padding-bottom:130px;
+    min-height: 100%;
+}
+
+footer.page-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    height: 130px;
+}
+.footer-container{
+    background-color: #5163cde6;
+    height: 130px;
+}
+.footer-container a{
+    color: white;
+}
+.footer-container a:hover{
+    text-decoration: none;
+}
+.footer-container hr{
+    border-top: 1px solid rgba(255, 253, 253, 0.32);
+}

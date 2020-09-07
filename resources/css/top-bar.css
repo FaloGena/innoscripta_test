@@ -1,0 +1,109 @@
+.top-bar {
+    height: 100px;
+    background-color: burlywood;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.top-bar .logo img{
+    width: 180px;
+    height: 100px;
+}
+
+.top-bar__description span{
+    font-family: RobotoL, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: middle;
+    display: table-cell;
+    height: 100px;
+}
+
+.top-bar__profile-buttons{
+    text-align: center;
+}
+
+.top-bar__profile-buttons .profile-button{
+    font-family: RobotoL, Arial, sans-serif;
+    display: block;
+    position: relative;
+    height: 75px;
+    top: 25%;
+    font-size: 25px;
+    color: white;
+}
+
+.top-bar__profile-buttons .logout-button{
+    display: block;
+    vertical-align: bottom;
+    position: relative;
+    height: 25px;
+    color: red;
+}
+
+.top-bar__auth-buttons{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.top-bar__auth-buttons button{
+    width: 100%;
+    background-color: #ff6500d4;
+    border-color: #ff5400;
+}
+
+.top-bar__auth-buttons a{
+    color: red;
+    font-weight: 600;
+}
+
+.top-bar__cart-icon{
+    padding-right: 0;
+}
+
+.top-bar__cart-icon a{
+    color: black;
+}
+
+.top-bar__cart-icon a:hover{
+    color: grey;
+}
+
+.top-bar__cart-icon i{
+    float: right;
+    padding-top: 40px;
+    font-size: 50px;
+}
+
+.top-bar__cart-info{
+    top: 70%;
+    position: relative;
+    font-family: RobotoL, Arial, sans-serif;
+    font-size: 21px;
+}
+
+.top-bar__cart-info span{
+
+}
+
+.top-bar__cart-icon .has-badge{
+    height: 100%;
+    float: right;
+}
+
+.top-bar__cart-icon .p1[data-count]:after{
+    position:absolute;
+    left:70%;
+    top:80%;
+    content: attr(data-count);
+    font-size:40%;
+    border-radius:50%;
+    line-height:1em;
+    color: white;
+    background:rgba(255,0,0,.85);
+    text-align:center;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+}
