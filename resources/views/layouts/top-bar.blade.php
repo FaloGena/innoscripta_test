@@ -36,7 +36,7 @@
     </div>
     <div class="col-1">
         <div class="top-bar__cart-info">
-            <span class="price">0$</span>
+            <span class="price">0<i class="fa fa-usd"></i></span>
         </div>
     </div>
 </div>

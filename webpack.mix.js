@@ -21,7 +21,8 @@ mix.scripts([
 mix.styles([
     'resources/css/main.css',
     'resources/css/top-bar.css',
-    'resources/css/registration-page.css'
+    'resources/css/registration-page.css',
+    'resources/css/index.css'
 ], 'public/css/style.css');
 
 mix.version();

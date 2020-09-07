@@ -49,4 +49,15 @@ $(document).ready(function () {
             }
         });
     });
+
+    // Active class changer for main grid buttons
+    function toggleActive (targetButton) {
+        $('.main-tabs button').removeClass('active');
+        $(targetButton).addClass('active');
+    }
+
+    $('.main-tabs button').on('click', function () {
+        toggleActive(this);
+    });
+
 });

@@ -9,13 +9,15 @@
     @include('layouts.resource-loading.css')
 </head>
 <body>
-<div class="wrap">
-    <div class="container h-100 main-container">
+<div class="page-container">
+<div class="content-wrap">
+    <div class="container main-container">
         @include('layouts.top-bar')
         @yield('content')
     </div>
 </div>
 @include('layouts.footer')
+</div>
 @include('layouts.modals.login')
 @include('layouts.resource-loading.js')
 </body>
