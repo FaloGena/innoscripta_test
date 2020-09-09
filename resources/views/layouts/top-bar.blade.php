@@ -29,14 +29,22 @@
     @endguest
     <div class="col-1 top-bar__cart-icon">
         <a href="/cart" class="">
-            <span class="p1 fa-stack fa-2x has-badge" data-count="0">
+            <span class="p1 fa-stack fa-2x has-badge" data-count="{{$session_order['total_amount']}}">
                 <i class="p3 fa fa-shopping-basket fa-stack-1x xfa-inverse"></i>
             </span>
         </a>
     </div>
-    <div class="col-1">
+    <div class="col-1 top-bar__order-info">
+        <div class="top-bar__change-currency">
+            @if($currency == 'usd')
+                <button data-currency="eur"><i class="fa fa-arrow-right"></i><i class="fa fa-eur"></i></button>
+            @else
+                <button data-currency="usd"><i class="fa fa-arrow-right"></i><i class="fa fa-usd"></i></button>
+            @endif
+        </div>
         <div class="top-bar__cart-info">
-            <span class="price">0<i class="fa fa-usd"></i></span>
+            <span class="price">{{$session_order['total_price']}}</span>
+            <i class="fa fa-{{$currency}}"></i>
         </div>
     </div>
 </div>

@@ -27,3 +27,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 });
 
+Route::post('cart', "CartController@changeCartAmount");
+Route::post('currency', "CurrencyController@change");
