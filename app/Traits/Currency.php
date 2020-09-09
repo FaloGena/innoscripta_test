@@ -13,7 +13,6 @@ trait Currency
 
     public function getCurrency()
     {
-
         return session('currency', 'usd');
     }
 

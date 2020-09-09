@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CartRequest;
-use App\Models\Product;
 use App\Traits\Cart;
-use App\Traits\Currency;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    use Currency, Cart;
+    use Cart;
 
+    /**
+     * Receives id of product and type of operation should be made (add or remove)
+     * then passes it to Cart trait method
+     *
+     * @param CartRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function changeCartAmount(CartRequest $request)
     {
         $id = $request->get('id');

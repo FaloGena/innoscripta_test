@@ -9,6 +9,8 @@ class OrderMiddleware
 {
     /**
      * Handle an incoming request.
+     * Uses Helper methods to calculate total order amount and price
+     * to pass it to view
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

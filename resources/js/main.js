@@ -18,15 +18,20 @@ $(document).ready(function () {
                 handler(response);
             },
             error: function (data) {
-                console.log(data);
-                if (data.status === 422) alert(data.responseJSON.error);
+                if (data.status === 422) {
+                    let response = data.responseJSON.errors;
+                    let message = "";
+                    $.each(response, function (key, el) {
+                        message += el[0] + "\n";
+                    });
+                    alert(message);
+                }
                 else alert('Error!');
             }
         });
     }
 
     function defaultHandler (response) {
-        console.log(response);
         location.href = '/';
     }
     // Submitting registration form

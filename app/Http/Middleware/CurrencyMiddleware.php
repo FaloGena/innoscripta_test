@@ -10,6 +10,7 @@ class CurrencyMiddleware
     use Currency;
     /**
      * Handle an incoming request.
+     * Passes to view current session currency
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

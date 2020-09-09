@@ -10,8 +10,13 @@ use App\Traits\Currency;
 class OrderHelper extends BaseHelper
 {
 
-    use Currency;
-
+    /**
+     * By session order information (order_items) calculates
+     * and returns total amount of products in it
+     *
+     * @param array $session_order
+     * @return int
+     */
     public static function getTotalAmount ($session_order)
     {
         $total = 0;
@@ -21,6 +26,13 @@ class OrderHelper extends BaseHelper
         return $total;
     }
 
+    /**
+     * By session order information (order_items) calculates
+     * and returns total price of products in it
+     *
+     * @param array $session_order
+     * @return float|int
+     */
     public static function getTotalPrice ($session_order)
     {
         $total_price = 0;
