@@ -35,8 +35,15 @@
         </a>
     </div>
     <div class="col-1">
+        <div class="top-bar__change-currency">
+            @if($currency == 'usd')
+                <button data-currency="eur"><i class="fa fa-arrow-right"></i><i class="fa fa-eur"></i></button>
+            @else
+                <button data-currency="usd"><i class="fa fa-arrow-right"></i><i class="fa fa-usd"></i></button>
+            @endif
+        </div>
         <div class="top-bar__cart-info">
-            <span class="price">0<i class="fa fa-usd"></i></span>
+            <span class="price">0<i class="fa fa-{{$currency}}"></i></span>
         </div>
     </div>
 </div>

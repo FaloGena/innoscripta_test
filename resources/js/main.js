@@ -1,63 +1,71 @@
-// Token header on every ajax request
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
-
 $(document).ready(function () {
 
-    // Submitting registration form
-    $('form.registration-form').on('submit', function () {
-        let formData = $(this).serialize();
+    // Token header on every ajax request
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 
+    function sendAjax (url, data, handler = defaultHandler) {
         $.ajax({
             type: 'POST',
-            url: '/register',
+            url: url,
             async: false,
-            data: formData,
+            data: data,
             cache: false,
-            processData: false,
             success: function (response) {
-                location.href = '/';
+                handler(response);
             },
             error: function (data) {
                 console.log(data);
                 alert('Error!');
             }
         });
+    }
+
+    function defaultHandler (response) {
+        console.log(response);
+        location.href = '/';
+    }
+    // Submitting registration form
+    $('form.registration-form').on('submit', function () {
+        let formData = $(this).serialize();
+        sendAjax('/register', formData);
     });
 
     // Attempt to Log in
     $('form.login-form').on('submit', function () {
         let formData = $(this).serialize();
+        sendAjax('/login', formData);
+    });
 
-        $.ajax({
-            type: 'POST',
-            url: '/login',
-            async: false,
-            data: formData,
-            cache: false,
-            processData: false,
-            success: function (response) {
-                location.href = '/';
-            },
-            error: function (data) {
-                console.log(data);
-                alert('Error!');
-            }
-        });
+    // Change currency button
+    $('.top-bar__change-currency button').on('click', function () {
+        let data = {'setCurrency': $(this).data('currency')};
+        sendAjax('/currency', data);
     });
 
     // Active class changer for main grid buttons
-    function toggleActive (targetButton) {
-        $('.main-tabs button').removeClass('active');
-        $(targetButton).addClass('active');
-    }
-
     $('.main-tabs button').on('click', function () {
-        toggleActive(this);
+        $('.main-tabs button').removeClass('active');
+        $(this).addClass('active');
     });
 
+    // Add/remove item to cart
+    function changeCartHandler (response) {
+        console.log(response);
+        let count = $('.top-bar__cart-icon span');
+        let targetAmount = parseInt(count.attr('data-count'), 10) + 1;
+        count.attr('data-count', targetAmount);
+    }
+    function changeCart (id, operation) {
+        let data = {'id': id, 'operation': operation};
+        sendAjax('/cart', data, changeCartHandler);
+    }
+
+    $('.card-buying .to-cart button').on('click', function () {
+        let id = $(this).data('item');
+        changeCart(id, "add");
+    });
 });
