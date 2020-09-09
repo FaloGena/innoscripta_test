@@ -55,6 +55,7 @@
 .main-grid__card .card-description{
     width: 90%;
     margin: auto auto 10px;
+    min-height: 60px;
 }
 .main-grid__card .card-description h5{
     opacity: 0.6;
@@ -92,4 +93,5 @@
     background-color: orange;
     font-size: 15px;
     font-weight: 800;
+    padding-top: 0;
 }
