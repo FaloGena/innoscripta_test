@@ -20,12 +20,13 @@
             </div>
             @php
             $item_id = $pizza->id;
-            $amount = $order[$item_id] ?? 0;
+            $amount = $session_order[$item_id] ?? 0;
+            $minus_visibility = ($amount == 0) ? 'hidden' : '';
             @endphp
             <div class="col-6 to-cart">
-                <span class="">Add to cart</span>
-                <span class="counter">{{$amount}}</span>
-                <button data-item="{{$pizza->id}}">+</button>
+                <button class="minus-button {{$minus_visibility}}" data-operation="remove" data-item="{{$pizza->id}}">-</button>
+                <span class="counter" data-item="{{$pizza->id}}">{{$amount}}</span>
+                <button data-operation="add" data-item="{{$pizza->id}}">+</button>
             </div>
         </div>
     </div>

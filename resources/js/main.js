@@ -19,7 +19,8 @@ $(document).ready(function () {
             },
             error: function (data) {
                 console.log(data);
-                alert('Error!');
+                if (data.status === 422) alert(data.responseJSON.error);
+                else alert('Error!');
             }
         });
     }
@@ -54,10 +55,24 @@ $(document).ready(function () {
 
     // Add/remove item to cart
     function changeCartHandler (response) {
-        console.log(response);
+        // Minus button
+        if (response.amount > 0)
+            $('.to-cart .minus-button[data-item=' + response.id + ']').removeClass('hidden');
+        else
+            $('.to-cart .minus-button[data-item=' + response.id + ']').addClass('hidden');
+
+        // Amount counter on product card
+        $('.to-cart span[data-item=' + response.id + ']').text(response.amount);
+
+        // Total order amount counter on top
         let count = $('.top-bar__cart-icon span');
-        let targetAmount = parseInt(count.attr('data-count'), 10) + 1;
+        let targetAmount = parseInt(count.attr('data-count'), 10) + response.change;
         count.attr('data-count', targetAmount);
+
+        // Total sum on top
+        let sum = parseFloat($('.top-bar__cart-info span').text());
+        let total = (sum + response.change * response.price).toFixed(2);
+        $('.top-bar__cart-info span').text(total);
     }
     function changeCart (id, operation) {
         let data = {'id': id, 'operation': operation};
@@ -66,6 +81,7 @@ $(document).ready(function () {
 
     $('.card-buying .to-cart button').on('click', function () {
         let id = $(this).data('item');
-        changeCart(id, "add");
+        let operation = $(this).data('operation');
+        changeCart(id, operation);
     });
 });

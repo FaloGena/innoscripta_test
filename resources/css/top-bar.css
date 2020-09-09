@@ -76,19 +76,18 @@
     font-size: 50px;
 }
 
+.top-bar__order-info{
+    padding: 0 0 0 5px;
+}
 .top-bar__change-currency{
     height: 50%;
 }
 .top-bar__cart-info{
-    height: 50%;
-    position: relative;
-    font-family: RobotoL, Arial, sans-serif;
-    font-size: 21px;
-}
-
-.top-bar__cart-info span{
+    height: 32px;
     position: absolute;
     bottom: 0;
+    font-family: RobotoL, Arial, sans-serif;
+    font-size: 21px;
 }
 
 .top-bar__cart-icon .has-badge{

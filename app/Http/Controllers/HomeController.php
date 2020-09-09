@@ -22,8 +22,6 @@ class HomeController extends Controller
         $pizzas = new Product();
         $pizzas = $pizzas->getAll();
 
-        $order = session('order_items');
-
-        return view('index')->with(['pizzas' => $pizzas, 'order' => $order]);
+        return view('index')->with(['pizzas' => $pizzas]);
     }
 }

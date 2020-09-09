@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Traits\Currency;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use Currency;
     /**
      * The attributes that are mass assignable.
      *
@@ -23,11 +25,12 @@ class Product extends Model
         return $items;
     }
 
-    public function get($name)
+    public function getPrice()
     {
 
-        $item = $this->findOrFail($name);
+        $currency = $this->getCurrency();
+        $priceColumn = "price_".$currency;
 
-        return $item;
+        return $this->$priceColumn;
     }
 }

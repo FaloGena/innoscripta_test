@@ -86,9 +86,11 @@
     font-family: 'Grandstander', cursive;
     font-weight: 400;
     line-height: 32px;
-    padding-right: 4px;
+    padding: 0 5px;
 }
 .main-grid__card .card-buying .to-cart button{
+    height: 27px;
+    width: 27px;
     border-radius: 15px;
     background-color: orange;
     font-size: 15px;

@@ -42,3 +42,6 @@ footer.page-footer{
 .footer-container hr{
     border-top: 1px solid rgba(255, 253, 253, 0.32);
 }
+.hidden {
+    display: none;
+}
