@@ -47,8 +47,17 @@ $(document).ready(function () {
         sendAjax('/currency', data);
     });
 
+    // Change displayed products on tab change
+    function changeProducts (button) {
+        let target = $(button).data('target');
+        $('.main-grid__card').addClass('hidden');
+        $('.main-grid__card.' + target).removeClass('hidden');
+        // history.pushState({}, '', '?type=' + target);
+    }
+
     // Active class changer for main grid buttons
     $('.main-tabs button').on('click', function () {
+        changeProducts(this);
         $('.main-tabs button').removeClass('active');
         $(this).addClass('active');
     });

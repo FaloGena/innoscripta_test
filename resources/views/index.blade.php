@@ -2,13 +2,13 @@
 @section('content')
     <div class="row main-tabs">
         <div class="col-4 main-tabs__pizza">
-            <button class="active">Pizza</button>
+            <button data-target="pizza" class="active">Pizza</button>
         </div>
         <div class="col-4 main-tabs__drinks">
-            <button>Drinks</button>
+            <button data-target="drink">Drinks</button>
         </div>
         <div class="col-4 main-tabs__sauces">
-            <button>Sauces</button>
+            <button data-target="sauce">Sauces</button>
         </div>
     </div>
     <div class="row main-grid">

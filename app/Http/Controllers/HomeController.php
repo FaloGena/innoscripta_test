@@ -10,18 +10,18 @@ class HomeController extends Controller
     public function index ()
     {
 //        $pizza = [
-//            'name' => 'Texas',
-//            'type' => 'pizza',
-//            'price_usd' => '6.86',
-//            'price_eur' => '5.81',
-//            'description' => 'Ham, aromatic bacon, chicken and spicy pepperoni with tender mozzarella and emmental.',
-//            'weight' => '650'
+//            'name' => 'Cheese',
+//            'type' => 'sauce',
+//            'price_usd' => '0.27',
+//            'price_eur' => '0.22',
+//            'description' => 'Delicate cheese sauce Heinz in convenient portion packaging.',
+//            'weight' => '25'
 //        ];
 //        Product::create($pizza);
 //dd();
-        $pizzas = new Product();
-        $pizzas = $pizzas->getAll();
+        $product = new Product();
+        $products = $product->getAll();
 
-        return view('index')->with(['pizzas' => $pizzas]);
+        return view('index')->with(['products' => $products]);
     }
 }
