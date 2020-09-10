@@ -34,6 +34,9 @@ $(document).ready(function () {
     function defaultHandler (response) {
         location.href = '/';
     }
+    function stayHandler (response) {
+        location.reload();
+    }
     // Submitting registration form
     $('form.registration-form').on('submit', function () {
         let formData = $(this).serialize();
@@ -43,13 +46,13 @@ $(document).ready(function () {
     // Attempt to Log in
     $('form.login-form').on('submit', function () {
         let formData = $(this).serialize();
-        sendAjax('/login', formData);
+        sendAjax('/login', formData, stayHandler);
     });
 
     // Change currency button
     $('.top-bar__change-currency button').on('click', function () {
         let data = {'setCurrency': $(this).data('currency')};
-        sendAjax('/currency', data);
+        sendAjax('/currency', data, stayHandler);
     });
 
     // Change displayed products on tab change
@@ -72,11 +75,15 @@ $(document).ready(function () {
         // Minus button
         if (response.amount > 0)
             $('.to-cart .minus-button[data-item=' + response.id + ']').removeClass('hidden');
-        else
+        else {
+            // For main page
             $('.to-cart .minus-button[data-item=' + response.id + ']').addClass('hidden');
+            // For cart page
+            $('.cart-products .cart-position[data-item=' + response.id + ']').addClass('hidden');
+        }
 
         // Amount counter on product card
-        $('.to-cart span[data-item=' + response.id + ']').text(response.amount);
+        $('span.change-cart[data-item=' + response.id + ']').text(response.amount);
 
         // Total order amount counter on top
         let count = $('.top-bar__cart-icon span');
@@ -87,13 +94,18 @@ $(document).ready(function () {
         let sum = parseFloat($('.top-bar__cart-info span').text());
         let total = (sum + response.change * response.price).toFixed(2);
         $('.top-bar__cart-info span').text(total);
+        // Total sum for cart page
+        $('.cart-total__main-price .changeable span').text(total);
+        let deliveryCost = parseFloat($('.cart-total__delivery-price .value span').text()).toFixed(2);
+        $('.cart-total__total-price .changeable span').text(+total + +deliveryCost);
+
     }
     function changeCart (id, operation) {
         let data = {'id': id, 'operation': operation};
         sendAjax('/cart', data, changeCartHandler);
     }
 
-    $('.card-buying .to-cart button').on('click', function () {
+    $('button.change-cart').on('click', function () {
         let id = $(this).data('item');
         let operation = $(this).data('operation');
         changeCart(id, operation);

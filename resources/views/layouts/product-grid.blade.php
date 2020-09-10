@@ -28,9 +28,9 @@
             $minus_visibility = ($amount == 0) ? 'hidden' : '';
             @endphp
             <div class="col-6 to-cart">
-                <button class="minus-button {{$minus_visibility}}" data-operation="remove" data-item="{{$product->id}}">-</button>
-                <span class="counter" data-item="{{$product->id}}">{{$amount}}</span>
-                <button data-operation="add" data-item="{{$product->id}}">+</button>
+                <button class="change-cart minus-button {{$minus_visibility}}" data-operation="remove" data-item="{{$product->id}}">-</button>
+                <span class="change-cart counter" data-item="{{$product->id}}">{{$amount}}</span>
+                <button class="change-cart" data-operation="add" data-item="{{$product->id}}">+</button>
             </div>
         </div>
     </div>

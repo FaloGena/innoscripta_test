@@ -22,7 +22,9 @@ mix.styles([
     'resources/css/main.css',
     'resources/css/top-bar.css',
     'resources/css/registration-page.css',
-    'resources/css/index.css'
+    'resources/css/index.css',
+    'resources/css/cart.css',
+    'resources/css/checkout.css'
 ], 'public/css/style.css');
 
 mix.version();
