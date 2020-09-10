@@ -1,0 +1,19 @@
+.checkout-heading{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #495057;
+}
+.checkout-descr{
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: #495057;
+}
+.checkout-form__submit-button{
+    text-align: right;
+}
+.checkout-form .btn-primary{
+    background-color: #ff6500d4;
+    border-color: #ff5400;
+}

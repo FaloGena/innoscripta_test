@@ -28,7 +28,11 @@
                 </span>
             </div>
             <div class="to-checkout">
-                <a href="/checkout">To checkout</a>
+                @if ($session_order['total_amount'] > 0)
+                    <a href="/checkout">To checkout</a>
+                @else
+                    <a href="/">Buy something</a>
+                @endif
             </div>
         </div>
     </div>

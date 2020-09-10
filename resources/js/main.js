@@ -110,4 +110,32 @@ $(document).ready(function () {
         let operation = $(this).data('operation');
         changeCart(id, operation);
     });
+
+    // Checkout submit
+    function checkoutHandler (response) {
+        if (response.order) {
+            alert('Your order to ' + response.order.address + ' successfully sent!');
+            location.href = '/';
+        }
+        else
+            alert('Error submitting your order');
+    }
+
+    $('form.checkout-form').on('submit', function () {
+        let formData = $(this).serialize();
+        sendAjax('/checkout', formData, checkoutHandler);
+    });
+
+    // Profile order history expand arrow changing down-to-up
+    $('.profile-order-history .expand-arrow button').on('click', function () {
+        let icon = $(this).find('i.fa');
+        if (icon.hasClass('fa-angle-down')) {
+            icon.removeClass('fa-angle-down');
+            icon.addClass('fa-angle-up');
+        }
+        else {
+            icon.removeClass('fa-angle-up');
+            icon.addClass('fa-angle-down');
+        }
+    });
 });
