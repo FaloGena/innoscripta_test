@@ -13,7 +13,9 @@
             </div>
             <div class="col-lg-12 address">
                 <span>Address:</span>
-                <span>{{$order->address}}</span>
+                <span>{{$order->address->name}}</span>
+                <br>
+                <span>{{$order->address->street}}, {{$order->address->house}}</span>
             </div>
             <div class="col-lg-12 line"></div>
             <div class="col-lg-12 item-list-title">

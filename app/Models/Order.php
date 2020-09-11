@@ -23,7 +23,7 @@ class Order extends Model
 
     public function address()
     {
-        return $this->hasOne('App\Models\Address');
+        return $this->belongsTo('App\Models\Address');
     }
 
     public function createByForm()
