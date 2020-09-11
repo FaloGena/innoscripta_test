@@ -18,7 +18,7 @@ class OrderMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $session_order = session('order_items');
+        $session_order = session('order_items', []);
         $total_amount = OrderHelper::getTotalAmount($session_order);
         $total_price = OrderHelper::getTotalPrice($session_order);
 

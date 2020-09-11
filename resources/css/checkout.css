@@ -1,0 +1,33 @@
+.checkout-heading{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #495057;
+}
+.checkout-descr{
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: #495057;
+}
+.checkout-form__submit-button{
+    text-align: right;
+}
+.checkout-form .btn-primary{
+    background-color: #ff6500d4;
+    border-color: #ff5400;
+}
+.checkout-form .empty-cart-redirect{
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    float: right;
+    background-color: #ff6500d4;
+    border-color: #ff5400;
+}
+.checkout-form .address-item__body.active{
+    background-color: orange;
+}

@@ -50,6 +50,8 @@
 .main-grid__card .card-title span{
     float: right;
     line-height: 29px;
+    font-weight: 700;
+    opacity: 0.5;
 }
 
 .main-grid__card .card-description{
@@ -96,4 +98,5 @@
     font-size: 15px;
     font-weight: 800;
     padding-top: 0;
+    outline: none;
 }

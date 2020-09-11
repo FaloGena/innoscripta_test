@@ -18,7 +18,9 @@
 </div>
 @include('layouts.footer')
 </div>
+@guest
 @include('layouts.modals.login')
+@endguest
 @include('layouts.resource-loading.js')
 </body>
 </html>

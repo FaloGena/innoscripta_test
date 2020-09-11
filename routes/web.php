@@ -25,7 +25,14 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('profile', "UserController@index");
+    Route::post('profile', "AddressController@create");
 });
 
-Route::post('cart', "CartController@changeCartAmount");
 Route::post('currency', "CurrencyController@change");
+
+Route::get('cart', "CartController@index");
+Route::post('cart', "CartController@changeCartAmount");
+
+Route::get('checkout', "CheckoutController@index");
+Route::post('checkout', "CheckoutController@save");

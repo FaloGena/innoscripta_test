@@ -1,0 +1,128 @@
+.profile-info{
+    margin-top: 3%;
+    padding: 10px;
+    font-size: 21px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.profile-addresses__title{
+    margin: 5% 0 3%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.prev-slick, .next-slick{
+    background-color: orange;
+    border-radius: 5px;
+    height: 40%;
+    margin: auto;
+
+}
+.prev-slick i, .next-slick i{
+    font-weight: 600;
+}
+
+.slick-track {
+    min-width: 100%!important;
+}
+
+.profile-addresses .address-item{
+    padding: 0 5px 5px;
+    height: 115px;
+}
+.profile-addresses .address-item button.add-address{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 60px;
+}
+.profile-addresses .address-item .border{
+    box-shadow: 0 1px 4px 0 #000000d6;
+    height: 100%;
+}
+.profile-addresses .address-item .address-name{
+    font-size: 19px;
+    font-weight: 700;
+}
+.profile-addresses .address-item__address{
+    padding-left: 20px;
+    font-weight: 500;
+}
+.profile-addresses .address-item .comment{
+    margin-top: 5px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.profile-order-history__title{
+    margin-top: 5%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.profile-order-history{
+    margin-top: 2%;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.profile-order-history .no-orders{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-order-history .order{
+    margin-bottom: 5px;
+}
+.profile-order-history .order .order-border{
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+.profile-order-history .order .header{
+    margin-bottom: 5px;
+}
+.profile-order-history .order .line{
+    width: 75%;
+    margin: auto;
+    height: 1px;
+    background-color: #958c7e38;
+}
+.profile-order-history .item-list-title{
+    margin: 5px 0;
+    text-align: center;
+}
+
+.profile-order-history .item-list{
+    padding-bottom: 5px;
+}
+.profile-order-history .item-list .item{
+    margin-bottom: 3px;
+    border-bottom: 1px solid #958c7e38;
+}
+.profile-order-history .item-list .image img{
+    height: 100%;
+    width: 100%;
+}
+.profile-order-history .expand-arrow{
+    text-align: center;
+    padding-bottom: 3px;
+}
+.profile-order-history .expand-arrow button{
+    padding: 0 5px;
+    border: none;
+    background-color: orange;
+    outline: none;
+}
+.profile-order-history .expand-arrow i{
+    font-weight: 900;
+}
+
+#newAddressModal input{
+    margin-bottom: 5px;
+}
