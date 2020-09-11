@@ -26,6 +26,7 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('profile', "UserController@index");
+    Route::post('profile', "AddressController@create");
 });
 
 Route::post('currency', "CurrencyController@change");

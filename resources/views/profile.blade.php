@@ -14,10 +14,15 @@
             <span>Email: {{$user->email ?? '-'}}</span>
         </div>
     </div>
+    <div class="col-lg-12 profile-addresses__title">
+        <span>Your addresses</span>
+    </div>
+    @include('layouts.profile.profile-addresses')
     <div class="col-lg-12 profile-order-history__title">
         <span>Your order history</span>
     </div>
     <div class="row profile-order-history">
-            @include('layouts.profile-orders')
+        @include('layouts.profile.profile-orders')
     </div>
+    @include('layouts.profile.new-address-modal')
 @endsection

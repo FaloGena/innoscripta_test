@@ -19,9 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('phone');
-            $table->string('address');
+            $table->foreignId('address_id')->constrained();
             $table->string('email')->nullable();
-            $table->string('comment')->nullable();
             $table->string('products')->nullable();
             $table->float('price')->nullable();
             $table->string('currency')->nullable();

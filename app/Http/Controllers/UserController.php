@@ -11,6 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $addresses = $user->addresses;
         $orders = $user->orders;
         foreach ($orders as $order) {
             $items = json_decode($order->products, true);
@@ -19,6 +20,6 @@ class UserController extends Controller
             $order->products = $products;
         }
 
-        return view('profile')->with(['user'=>$user, 'orders'=>$orders]);
+        return view('profile')->with(['user'=>$user, 'orders'=>$orders, 'addresses'=>$addresses]);
     }
 }

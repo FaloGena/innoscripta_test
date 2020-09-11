@@ -111,10 +111,19 @@ $(document).ready(function () {
         changeCart(id, operation);
     });
 
+    // Checkout select address for auth user
+    $('.checkout-form .address-item__body').on('click', function () {
+        let address = $(this).data('address');
+        $('.checkout-form input.address').val(address);
+
+        $('.checkout-form .address-item__body').removeClass('active');
+        $(this).addClass('active');
+    });
+
     // Checkout submit
     function checkoutHandler (response) {
         if (response.order) {
-            alert('Your order to ' + response.order.address + ' successfully sent!');
+            alert('Your order successfully sent!');
             location.href = '/';
         }
         else
@@ -137,5 +146,14 @@ $(document).ready(function () {
             icon.removeClass('fa-angle-up');
             icon.addClass('fa-angle-down');
         }
+    });
+
+    // Profile addresses slider
+    $('.profile-addresses').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        prevArrow: $('.prev-slick'),
+        nextArrow: $('.next-slick')
     });
 });

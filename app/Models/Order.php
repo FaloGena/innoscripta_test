@@ -18,8 +18,13 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'phone', 'name', 'surname', 'comment', 'email', 'address', 'user_id'
+        'phone', 'name', 'surname', 'email', 'address_id', 'user_id', 'products', 'price', 'currency'
     ];
+
+    public function address()
+    {
+        return $this->hasOne('App\Models\Address');
+    }
 
     public function createByForm()
     {

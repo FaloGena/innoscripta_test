@@ -1,3 +1,9 @@
+@if ($orders->isEmpty())
+    <div class="col-lg-12 no-orders">
+        <span>There is empty for now. Let's make your first order!</span>
+    </div>
+@endif
+
 @foreach($orders as $order)
     <div class="col-lg-4 order">
         <div class="order-border">
@@ -29,7 +35,9 @@
                 @endforeach
             </div>
             <div class="col-lg-12 expand-arrow">
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-{{$order->id}}" aria-expanded="false" aria-controls="collapse-{{$order->id}}">
+                <button class="btn btn-primary" type="button" data-toggle="collapse"
+                        data-target="#collapse-{{$order->id}}" aria-expanded="false"
+                        aria-controls="collapse-{{$order->id}}">
                     <i class="fa fa-angle-down"></i>
                 </button>
             </div>

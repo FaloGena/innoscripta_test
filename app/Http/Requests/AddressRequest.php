@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CheckoutRequest extends FormRequest
+class AddressRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,12 @@ class CheckoutRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|alpha',
-            'surname' => 'required|alpha',
-            'phone' => 'required|numeric',
-            'email' => 'nullable|email',
-            'street' => 'required_without:address_id',
-            'house' => 'required_without:address_id',
+            'name' => 'required',
+            'street' => 'required',
+            'house' => 'required',
             'floor' => 'nullable|numeric',
             'apartment' => 'nullable|numeric',
             'comment' => 'nullable',
-            'address_id' => 'required_without:street,house|exists:addresses,id'
         ];
     }
 }
