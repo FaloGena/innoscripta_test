@@ -7,6 +7,7 @@ Order history for logged in users, aswell as saved addresses (that could be used
 Code split to different small classes and methods so its parts could be used as modules and implemented (maybe with a little changes cause of lack of time) to another code structure, and it's easier to maintain.
 Most non-obvious methods have DocBlocks.
 Design and css are not my strongest skills so yeah.
+For best experience please use Google Chrome ~v85 and screen > 1200px width.
 
 Were used:
 - Backend:
